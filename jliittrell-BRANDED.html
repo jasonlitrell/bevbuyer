@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Littrell | Hospitality & Spirits Brand Consulting</title>
+    <meta name="description" content="Transform your hospitality operation or spirits brand with proven systems. KMS implementation, operations coaching, and sales strategies that deliver results.">
+    <meta name="keywords" content="hospitality consultant, spirits brand consultant, KMS, restaurant operations, bar consulting, spirits sales">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        :root {
+            --navy: #07223d;
+            --green: #52ca28;
+            --pink: #eb4171;
+            --grey: #4a5568;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-alt: #f9fafb;
+        }
+        body {font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6;}
+        .container {max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
+
+        /* GHL Placeholder Boxes - Now with brand colors */
+        .ghl-placeholder {
+            border: 4px dashed var(--green);
+            background: #f0fdf4;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        .ghl-placeholder h3 {
+            color: var(--green);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .ghl-placeholder p {
+            color: var(--grey);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        .ghl-placeholder code {
+            background: #dcfce7;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            color: #14532d;
+        }
+
+        /* Header */
+        header {position: sticky; top: 0; background: rgba(7, 34, 61, 0.98); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 1000;}
+        nav {display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;
+            max-width: 1200px; margin: 0 auto;}
+        .logo {display: flex; align-items: center; gap: 0.75rem;}
+        .logo img {height: 50px; width: auto;}
+        .logo-text {color: white; font-size: 1.25rem; font-weight: 700;}
+        .nav-links {display: flex; gap: 2rem; list-style: none; align-items: center;}
+        .nav-links a {color: white; text-decoration: none; font-weight: 600; transition: color 0.3s;}
+        .nav-links a:hover {color: var(--green);}
+        .nav-cta {background: var(--green); color: var(--navy); padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+            text-decoration: none; font-weight: 700; transition: all 0.3s;}
+        .nav-cta:hover {background: #47b724; transform: translateY(-2px);}
+
+        /* Hero */
+        .hero {padding: 6rem 2rem 4rem; background: linear-gradient(135deg, var(--navy) 0%, #0a2f52 100%);
+            color: white; text-align: center; position: relative; overflow: hidden;}
+        .hero::before {content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(82, 202, 40, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(235, 65, 113, 0.1) 0%, transparent 50%);
+            z-index: 0;}
+        .hero-content {position: relative; z-index: 1;}
+        .hero h1 {font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.1;}
+        .hero .highlight {color: var(--green);}
+        .hero .pink-highlight {color: var(--pink);}
+        .hero p {font-size: 1.25rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.95;}
+        .hero-cta {display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;}
+        .btn {padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none;
+            display: inline-block; transition: all 0.3s; cursor: pointer; border: none; font-size: 1.125rem;}
+        .btn-green {background: var(--green); color: var(--navy);}
+        .btn-green:hover {background: #47b724; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2);}
+        .btn-pink {background: var(--pink); color: white;}
+        .btn-pink:hover {background: #d9386a; transform: translateY(-2px);}
+        .btn-outline {background: transparent; color: white; border: 2px solid white;}
+        .btn-outline:hover {background: white; color: var(--navy);}
+
+        /* Trust Bar */
+        .trust-bar {background: var(--bg-alt); padding: 3rem 2rem; text-align: center;}
+        .trust-stats {display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-top: 2rem;}
+        .trust-stat .number {font-size: 3rem; font-weight: 900; color: var(--navy); line-height: 1;}
+        .trust-stat .label {color: var(--text-light); font-size: 0.875rem; margin-top: 0.5rem; font-weight: 600;}
+
+        /* Free Community CTA */
+        .community-cta {background: linear-gradient(135deg, var(--pink) 0%, #d9386a 100%);
+            padding: 4rem 2rem; text-align: center; color: white;}
+        .community-cta h2 {font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;}
+        .community-cta p {font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;}
+
+        /* Sections */
+        section {padding: 5rem 2rem;}
+        .section-title {font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-align: center; margin-bottom: 1rem;}
+        .section-subtitle {font-size: 1.25rem; color: var(--text-light); text-align: center;
+            max-width: 700px; margin: 0 auto 3rem;}
+
+        /* Products Grid */
+        .products-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem; max-width: 1200px; margin: 0 auto;}
+        .product-card {background: white; padding: 2rem; border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s; position: relative; overflow: hidden;}
+        .product-card::before {content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;}
+        .product-card.navy::before {background: var(--navy);}
+        .product-card.green::before {background: var(--green);}
+        .product-card.pink::before {background: var(--pink);}
+        .product-card.grey::before {background: var(--grey);}
+        .product-card:hover {transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
+        .product-icon {font-size: 3rem; margin-bottom: 1rem;}
+        .product-card h3 {font-size: 1.5rem; margin-bottom: 1rem; color: var(--navy);}
+        .product-card p {color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;}
+        .product-card ul {padding-left: 1.25rem; margin-top: 1rem;}
+        .product-card li {color: var(--text-light); margin-bottom: 0.5rem;}
+        .product-tag {display: inline-block; background: var(--green); color: white; padding: 0.25rem 0.75rem;
+            border-radius: 1rem; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem;}
+        .product-tag.pink {background: var(--pink);}
+
+        /* Services Grid */
+        .services-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem; max-width: 1200px; margin: 0 auto;}
+        .service-card {background: white; padding: 2rem; border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s; border-left: 4px solid var(--green);}
+        .service-card:hover {transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
+        .service-icon {font-size: 3rem; margin-bottom: 1rem;}
+        .service-card h3 {font-size: 1.5rem; margin-bottom: 1rem; color: var(--navy);}
+        .service-card p {color: var(--text-light); line-height: 1.8;}
+
+        /* Two Column Layout */
+        .two-col {display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1200px; margin: 0 auto;}
+        .two-col img {width: 100%; border-radius: 1rem;}
+
+        /* Content Cards */
+        .content-section {background: var(--bg-alt);}
+        .content-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem; max-width: 1200px; margin: 0 auto;}
+        .content-card {background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.08);}
+        .content-card h3 {font-size: 1.75rem; margin-bottom: 1rem; color: var(--navy); line-height: 1.3;}
+        .content-card h4 {font-size: 1.25rem; margin: 1.5rem 0 0.75rem; color: var(--text); font-weight: 700;}
+        .content-card p {color: var(--text-light); margin-bottom: 1rem; line-height: 1.8;}
+        .content-card ul {padding-left: 1.5rem; margin: 1rem 0;}
+        .content-card li {color: var(--text-light); margin-bottom: 0.75rem; line-height: 1.6;}
+        .content-card strong {color: var(--text); font-weight: 700;}
+
+        /* Footer */
+        footer {background: var(--navy); color: white; padding: 3rem 2rem; text-align: center;}
+        .footer-links {display: flex; gap: 2rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap;}
+        .footer-links a {color: white; text-decoration: none; opacity: 0.8;}
+        .footer-links a:hover {opacity: 1; color: var(--green);}
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {display: none;}
+            section {padding: 3rem 1rem;}
+            .hero {padding: 5rem 1rem 3rem;}
+            .trust-stats {flex-direction: column; gap: 2rem;}
+            .products-grid, .services-grid, .content-grid {grid-template-columns: 1fr;}
+            .two-col {grid-template-columns: 1fr;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         HEADER & NAVIGATION
+         ======================================== -->
+    <header>
+        <nav>
+            <div class="logo">
+                <!-- Replace this with your actual logo file path in GoHighLevel -->
+                <img src="YOUR_LOGO_URL_HERE.png" alt="Jason Littrell Logo" style="filter: brightness(0) invert(1);">
+                <span class="logo-text">Jason Littrell</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#community">Free Resources</a></li>
+                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your <span class="highlight">Hospitality Operation</span><br>
+            or <span class="pink-highlight">Spirits Brand</span></h1>
+            <p>Proven systems, expert coaching, and strategic guidance for restaurants, bars, and spirits brands that want real results—not more theory.</p>
+
+            <div class="hero-cta">
+                <a href="#community" class="btn btn-green">Join Free Community</a>
+                <a href="#products" class="btn btn-outline">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TRUST BAR
+         ======================================== -->
+    <section class="trust-bar">
+        <div class="container">
+            <h3 style="color: var(--text-light); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Trusted by Leading Hospitality & Spirits Brands</h3>
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="number">$2.1M+</div>
+                    <div class="label">Cost Savings Generated</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="number">50+</div>
+                    <div class="label">Operations Optimized</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="number">23%</div>
+                    <div class="label">Average Cost Reduction</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="number">100%</div>
+                    <div class="label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔶 FREE COMMUNITY OPT-IN 🔶
+         REPLACE WITH GOHIGHLEVEL FORM
+         ======================================== -->
+    <section class="community-cta" id="community">
+        <div class="container">
+            <h2>Join the Hospitality Strategy Lab</h2>
+            <p>Get free resources, templates, and strategies delivered to your inbox. No fluff—just actionable insights from the field.</p>
+
+            <div class="ghl-placeholder">
+                <h3>📝 REPLACE WITH GOHIGHLEVEL OPT-IN FORM</h3>
+                <p><strong>What to do:</strong> Delete this entire placeholder div</p>
+                <p><strong>Add:</strong> GoHighLevel Form Widget</p>
+                <p><strong>Purpose:</strong> Capture emails for your free community</p>
+                <p><strong>Form Fields:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>Name (required)</li>
+                    <li>Email (required)</li>
+                    <li>Business Type (dropdown: Restaurant Owner, Bar/Nightclub, Spirits Brand, Consultant, Other)</li>
+                </ul>
+                <p><strong>Button Text:</strong> "Get Free Access"</p>
+                <p><strong>After Submit:</strong> Redirect to thank you page OR show "Check your email!"</p>
+                <p><strong>Automation:</strong> Add to "Free Community" list, send welcome email with first resource</p>
+                <code>Element Type: Form Widget</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PRODUCTS SECTION
+         ======================================== -->
+    <section id="products" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">My Products & Systems</h2>
+            <p class="section-subtitle">Complete solutions for hospitality operations and spirits brands</p>
+
+            <div class="products-grid">
+                <div class="product-card green">
+                    <div class="product-icon">⚡</div>
+                    <span class="product-tag">Most Popular</span>
+                    <h3>Kinetic Management Systems</h3>
+                    <p>Your complete hospitality operating system built on GoHighLevel. CRM, automation, marketing, and operations—all in one.</p>
+                    <ul>
+                        <li>Custom GoHighLevel setup for hospitality</li>
+                        <li>Customer & vendor management</li>
+                        <li>Automated marketing campaigns</li>
+                        <li>Booking & reservation systems</li>
+                        <li>Staff communication tools</li>
+                        <li>Performance dashboards</li>
+                    </ul>
+                </div>
+
+                <div class="product-card navy">
+                    <div class="product-icon">🎯</div>
+                    <h3>JLOS</h3>
+                    <p>Jason Littrell Operating System—my project management and coaching program. Get personalized guidance to execute your goals.</p>
+                    <ul>
+                        <li>1-on-1 coaching sessions</li>
+                        <li>Custom project management</li>
+                        <li>Accountability & execution support</li>
+                        <li>Strategic planning & roadmaps</li>
+                        <li>Weekly check-ins & progress tracking</li>
+                    </ul>
+                </div>
+
+                <div class="product-card pink">
+                    <div class="product-icon">🥃</div>
+                    <span class="product-tag pink">For Spirits Brands</span>
+                    <h3>The Rockey Method</h3>
+                    <p>Proven spirits sales system that gets your brand into more accounts and moving off the shelf faster.</p>
+                    <ul>
+                        <li>Distribution strategy & planning</li>
+                        <li>Sales training for brand ambassadors</li>
+                        <li>Account placement strategies</li>
+                        <li>Bartender education programs</li>
+                        <li>Velocity-building tactics</li>
+                        <li>Market penetration playbooks</li>
+                    </ul>
+                </div>
+
+                <div class="product-card grey">
+                    <div class="product-icon">🎪</div>
+                    <h3>MistakesWereMade</h3>
+                    <p>My signature event where hospitality pros share real stories, hard lessons, and actionable wisdom. No BS. Just truth.</p>
+                    <ul>
+                        <li>Live event experiences</li>
+                        <li>Real failure stories & lessons</li>
+                        <li>Networking with industry leaders</li>
+                        <li>Actionable takeaways</li>
+                        <li>Community building</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SERVICES SECTION
+         ======================================== -->
+    <section id="services" style="background: var(--bg-alt);">
+        <div class="container">
+            <h2 class="section-title">Consulting Services</h2>
+            <p class="section-subtitle">From KMS implementation to full operational transformations</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>KMS Implementation</h3>
+                    <p>Kitchen management system setup, training, and optimization. Get your team actually using the tools.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Operations Optimization</h3>
+                    <p>Streamline workflows, reduce costs 15-30%, and increase profitability without sacrificing quality.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Cost Reduction Strategy</h3>
+                    <p>Systematic approach to cutting food costs, labor costs, and waste while improving margins.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Menu Engineering</h3>
+                    <p>Data-driven menu optimization that balances guest appeal with profitability.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🥃</div>
+                    <h3>Spirits Brand Consulting</h3>
+                    <p>Distribution strategy, sales training, and market penetration for craft spirits brands.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Full Property Assessments</h3>
+                    <p>Comprehensive operational audit with detailed improvement roadmap and implementation support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTENT - SEO RICH ARTICLES
+         ======================================== -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Expert Insights</h2>
+            <p class="section-subtitle">Real strategies that work in the field</p>
+
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>How to Reduce Restaurant Food Costs by 15-30%</h3>
+                    <p>Food costs crushing your margins? Here are 5 proven strategies with specific ROI:</p>
+
+                    <h4>1. Recipe Standardization (3-5% savings)</h4>
+                    <p>Document portions. Train staff. Use KMS for daily cost tracking.</p>
+
+                    <h4>2. Inventory Management (4-7% savings)</h4>
+                    <p>Weekly counts. FIFO systems. Par levels based on actual usage.</p>
+
+                    <h4>3. Vendor Negotiations (2-5% savings)</h4>
+                    <p>Compare 3+ vendors. Negotiate volume discounts. Review quarterly.</p>
+
+                    <h4>4. Menu Engineering (4-8% savings)</h4>
+                    <p>Analyze profitability vs popularity. Strategic pricing. Portion control.</p>
+
+                    <h4>5. Waste Reduction (2-5% savings)</h4>
+                    <p>Track waste by category. Root cause analysis. Staff training.</p>
+
+                    <p><strong>Combined impact:</strong> $75K-$300K annual savings for $1M revenue restaurant.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Building a Spirits Brand Sales System That Actually Works</h3>
+                    <p>Most spirits brands fail because they treat bars like retail stores. Here's the truth:</p>
+
+                    <h4>The Distribution Trap</h4>
+                    <p>Getting into distribution doesn't mean you're "in the market." It means you have expensive shelf space that nobody knows about.</p>
+
+                    <h4>The Velocity Game</h4>
+                    <p>Success = accounts × velocity. You need both. An account that doesn't sell is worse than no account at all.</p>
+
+                    <h4>What Actually Works:</h4>
+                    <ul>
+                        <li><strong>Bartender education first:</strong> Not consumers. Bartenders sell your brand.</li>
+                        <li><strong>Focus on 10 accounts:</strong> Not 100. Dominate a few bars before expanding.</li>
+                        <li><strong>Build velocity programs:</strong> Staff incentives, signature serves, training sessions.</li>
+                        <li><strong>Track the right metrics:</strong> Depletion rates, not just placement.</li>
+                        <li><strong>Support your accounts:</strong> Marketing, training, events. Make them succeed.</li>
+                    </ul>
+
+                    <p><strong>The Rockey Method</strong> teaches exactly how to execute this strategy step-by-step.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Why Your Restaurant Needs a Kitchen Management System</h3>
+                    <p>A KMS is the fastest way to gain control of food costs and inventory:</p>
+
+                    <h4>What is KMS?</h4>
+                    <p>Software that manages inventory, purchasing, recipe costing, and prep workflows. Your kitchen's operating system.</p>
+
+                    <h4>Critical Benefits:</h4>
+                    <ul>
+                        <li>Real-time inventory tracking</li>
+                        <li>Accurate recipe costing (to the penny)</li>
+                        <li>Waste reduction (15-25% savings)</li>
+                        <li>Labor optimization (10-20% improvement)</li>
+                        <li>Vendor price comparison</li>
+                        <li>Automated compliance logs</li>
+                    </ul>
+
+                    <h4>ROI Timeline:</h4>
+                    <p>6-12 months to full ROI. Average savings: <strong>$50K-$200K annually</strong>.</p>
+
+                    <p><strong>Kinetic Management Systems</strong> includes KMS implementation as part of the complete package.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔶 GOHIGHLEVEL CALENDAR 🔶
+         REPLACE THIS SECTION
+         ======================================== -->
+    <section style="background: white; padding: 5rem 2rem;">
+        <div class="container">
+            <h2 class="section-title">Book a Strategy Call</h2>
+            <p class="section-subtitle">Let's discuss your operation and find the right solution</p>
+
+            <div class="ghl-placeholder">
+                <h3>📅 REPLACE WITH GOHIGHLEVEL CALENDAR</h3>
+                <p><strong>What to do:</strong> Delete this entire placeholder div</p>
+                <p><strong>Add:</strong> GoHighLevel Calendar Widget</p>
+                <p><strong>Purpose:</strong> Book strategy calls</p>
+                <p><strong>Settings:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>Calendar Name: "Strategy Call with Jason"</li>
+                    <li>Duration: 30 minutes</li>
+                    <li>Questions: Business name, Type (Restaurant/Spirits), Biggest challenge, Revenue range</li>
+                    <li>Buffer: 15 minutes between calls</li>
+                    <li>Confirmation: Email + SMS reminder</li>
+                </ul>
+                <code>Element Type: Calendar Widget</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔶 GOHIGHLEVEL CONTACT FORM 🔶
+         REPLACE THIS SECTION
+         ======================================== -->
+    <section id="contact" style="background: linear-gradient(135deg, var(--navy) 0%, #0a2f52 100%); padding: 5rem 2rem; color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Ready to Transform Your Business?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 3rem; opacity: 0.95;">Get in touch and let's explore which solution is right for you.</p>
+
+            <div class="ghl-placeholder">
+                <h3>📝 REPLACE WITH GOHIGHLEVEL CONTACT FORM</h3>
+                <p><strong>What to do:</strong> Delete this entire placeholder div</p>
+                <p><strong>Add:</strong> GoHighLevel Form Widget</p>
+                <p><strong>Form Fields:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>Name (required)</li>
+                    <li>Email (required)</li>
+                    <li>Phone (required)</li>
+                    <li>Business Type (dropdown: Restaurant, Bar/Nightclub, Hotel F&B, Spirits Brand, Multi-unit, Other)</li>
+                    <li>Interested In (checkboxes: KMS, JLOS, Rockey Method, MistakesWereMade, Consulting)</li>
+                    <li>Message (textarea)</li>
+                </ul>
+                <p><strong>Button Text:</strong> "Send Message"</p>
+                <code>Element Type: Form Widget</code>
+            </div>
+
+            <p style="margin-top: 3rem; font-size: 1.125rem;">
+                Or reach out directly:<br>
+                <strong style="font-size: 1.5rem; color: var(--green);">jason@jliittrell.com</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#products">Products</a>
+                <a href="#services">Services</a>
+                <a href="#community">Free Community</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2024 Jason Littrell. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.7;">
+                Hospitality & Spirits Brand Consulting | KMS | Operations | Sales Systems
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
