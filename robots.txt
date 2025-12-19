@@ -1,0 +1,10 @@
+# robots.txt for jliittrell.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jliittrell.com/sitemap.xml
+
+# Crawl delay (optional, adjust as needed)
+Crawl-delay: 1
