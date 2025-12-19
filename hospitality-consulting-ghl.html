@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Littrell | Hospitality Management Consultant | KMS & Operations Expert</title>
+    <meta name="description" content="Expert hospitality management consultant specializing in KMS implementation, restaurant operations optimization, and cost reduction. Proven results in F&B operations, staff training, and profitability improvement.">
+    <meta name="keywords" content="hospitality consultant, KMS consultant, restaurant management, food and beverage consultant, hospitality operations, restaurant efficiency, cost reduction, menu engineering, staff training, hotel consultant">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Jason Littrell | Hospitality Management Consultant">
+    <meta property="og:description" content="Transform your hospitality business with expert consulting in KMS, operations, and profitability.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jliittrell.com/">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Jason Littrell Hospitality Consulting",
+      "description": "Hospitality management consulting specializing in KMS implementation and restaurant operations",
+      "provider": {
+        "@type": "Person",
+        "name": "Jason Littrell",
+        "jobTitle": "Hospitality Management Consultant"
+      },
+      "areaServed": "United States",
+      "serviceType": ["Hospitality Consulting", "KMS Implementation", "Restaurant Operations", "Cost Reduction"]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        :root {
+            --primary: #1e40af; --primary-dark: #1e3a8a; --accent: #f59e0b; --success: #059669;
+            --text: #1f2937; --text-light: #6b7280; --bg: #ffffff; --bg-alt: #f9fafb; --bg-dark: #111827;
+        }
+        body {font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden;}
+        .container {max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;}
+
+        /* Header */
+        header {position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;}
+        nav {display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; max-width: 1200px; margin: 0 auto;}
+        .logo {font-size: 1.5rem; font-weight: 900; color: var(--primary);}
+        .nav-links {display: flex; gap: 2rem; list-style: none;}
+        .nav-links a {color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s;}
+        .nav-links a:hover {color: var(--primary);}
+        .cta-btn {background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+            text-decoration: none; font-weight: 600; transition: all 0.3s;}
+        .cta-btn:hover {background: var(--primary-dark); transform: translateY(-2px);}
+
+        /* Hero */
+        .hero {padding: 8rem 1.5rem 4rem; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white; text-align: center;}
+        .hero h1 {font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.2;}
+        .hero h1 .highlight {color: var(--accent);}
+        .hero p {font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;}
+        .hero-cta {display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;}
+        .btn {padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s;
+            display: inline-block;}
+        .btn-primary {background: var(--accent); color: var(--text);}
+        .btn-primary:hover {background: #d97706; transform: translateY(-2px);}
+        .btn-secondary {background: white; color: var(--primary); border: 2px solid white;}
+        .btn-secondary:hover {background: transparent; color: white;}
+
+        /* Trust Bar */
+        .trust-bar {background: var(--bg-alt); padding: 2rem 1.5rem; text-align: center;}
+        .trust-bar h3 {color: var(--text-light); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;}
+        .trust-stats {display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;}
+        .trust-stat {text-align: center;}
+        .trust-stat .number {font-size: 2.5rem; font-weight: 900; color: var(--primary);}
+        .trust-stat .label {color: var(--text-light); font-size: 0.875rem;}
+
+        /* Section Styles */
+        section {padding: 5rem 1.5rem;}
+        .section-title {font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 1rem; text-align: center;}
+        .section-subtitle {font-size: 1.125rem; color: var(--text-light); text-align: center; max-width: 700px;
+            margin: 0 auto 3rem;}
+
+        /* Services Grid */
+        .services-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;}
+        .service-card {background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s; border-top: 4px solid var(--primary);}
+        .service-card:hover {transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
+        .service-icon {font-size: 3rem; margin-bottom: 1rem;}
+        .service-card h3 {font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);}
+        .service-card p {color: var(--text-light); line-height: 1.8;}
+        .service-features {margin-top: 1rem; padding-left: 1.25rem;}
+        .service-features li {color: var(--text-light); margin-bottom: 0.5rem;}
+
+        /* Content Sections */
+        .content-section {background: var(--bg-alt);}
+        .content-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto;}
+        .content-card {background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.08);}
+        .content-card h3 {font-size: 1.75rem; margin-bottom: 1rem; color: var(--primary);}
+        .content-card h4 {font-size: 1.25rem; margin: 1.5rem 0 0.75rem; color: var(--text);}
+        .content-card p {color: var(--text-light); margin-bottom: 1rem; line-height: 1.8;}
+        .content-card ul {padding-left: 1.5rem; margin: 1rem 0;}
+        .content-card li {color: var(--text-light); margin-bottom: 0.75rem; line-height: 1.6;}
+
+        /* FAQ Section */
+        .faq-section {background: white;}
+        .faq-container {max-width: 900px; margin: 0 auto;}
+        .faq-item {background: var(--bg-alt); padding: 1.5rem; margin-bottom: 1rem; border-radius: 0.75rem;
+            border-left: 4px solid var(--primary);}
+        .faq-item h3 {font-size: 1.25rem; color: var(--primary); margin-bottom: 0.75rem;}
+        .faq-item p {color: var(--text-light); line-height: 1.8;}
+        .faq-item ul {padding-left: 1.5rem; margin-top: 0.75rem;}
+        .faq-item li {color: var(--text-light); margin-bottom: 0.5rem;}
+
+        /* ROI Calculator */
+        .roi-section {background: var(--primary); color: white; text-align: center;}
+        .roi-section .section-title {color: white;}
+        .roi-section .section-subtitle {color: rgba(255,255,255,0.9);}
+        .roi-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 2rem auto;}
+        .roi-card {background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.2);}
+        .roi-card .number {font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem;}
+        .roi-card .label {font-size: 1.125rem; opacity: 0.95;}
+
+        /* CTA Section */
+        .cta-section {background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%); color: var(--text); text-align: center; padding: 5rem 1.5rem;}
+        .cta-section h2 {font-size: 2.5rem; margin-bottom: 1rem;}
+        .cta-section p {font-size: 1.25rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;}
+
+        /* Footer */
+        footer {background: var(--bg-dark); color: white; padding: 3rem 1.5rem 2rem; text-align: center;}
+        .footer-links {display: flex; gap: 2rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap;}
+        .footer-links a {color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;}
+        .footer-links a:hover {opacity: 1;}
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-links {display: none;}
+            .hero {padding: 6rem 1rem 3rem;}
+            .hero-cta {flex-direction: column; align-items: center;}
+            .trust-stats {flex-direction: column; gap: 2rem;}
+            section {padding: 3rem 1rem;}
+            .services-grid, .content-grid {grid-template-columns: 1fr;}
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);}}
+        .fade-in {animation: fadeInUp 0.6s ease-out;}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Jason Littrell</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#results">Results</a></li>
+            </ul>
+            <a href="#contact" class="cta-btn">Get Free Consultation</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Your Hospitality Business with <span class="highlight">Expert Consulting</span></h1>
+            <p>Specialized hospitality management consulting for restaurants, hotels, and F&B operations. KMS implementation, cost reduction, and operational excellence that drives real profitability.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Schedule Free Consultation</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <h3>Trusted by Leading Hospitality Brands</h3>
+        <div class="trust-stats">
+            <div class="trust-stat">
+                <div class="number">$2M+</div>
+                <div class="label">Cost Savings Generated</div>
+            </div>
+            <div class="trust-stat">
+                <div class="number">50+</div>
+                <div class="label">Properties Optimized</div>
+            </div>
+            <div class="trust-stat">
+                <div class="number">15-30%</div>
+                <div class="label">Average Cost Reduction</div>
+            </div>
+            <div class="trust-stat">
+                <div class="number">100%</div>
+                <div class="label">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Comprehensive Hospitality Consulting Services</h2>
+            <p class="section-subtitle">From KMS implementation to full operational overhauls, we deliver measurable results that improve your bottom line.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>KMS Implementation & Optimization</h3>
+                    <p>Expert kitchen management system implementation and optimization for streamlined operations and maximum efficiency.</p>
+                    <ul class="service-features">
+                        <li>Custom KMS selection and implementation</li>
+                        <li>Staff training and adoption strategies</li>
+                        <li>Integration with existing systems</li>
+                        <li>Recipe costing and menu engineering</li>
+                        <li>Inventory control and waste reduction</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Operations & Process Optimization</h3>
+                    <p>Streamline your hospitality operations to reduce costs, improve service quality, and increase profitability.</p>
+                    <ul class="service-features">
+                        <li>Workflow analysis and redesign</li>
+                        <li>Labor cost optimization</li>
+                        <li>Service standards development</li>
+                        <li>Quality control systems</li>
+                        <li>Performance metrics and KPIs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Cost Reduction & Profitability</h3>
+                    <p>Identify and eliminate waste while maximizing revenue opportunities across all areas of your operation.</p>
+                    <ul class="service-features">
+                        <li>Food and beverage cost analysis</li>
+                        <li>Vendor negotiation and sourcing</li>
+                        <li>Menu pricing optimization</li>
+                        <li>Waste reduction strategies</li>
+                        <li>Revenue management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Staff Training & Development</h3>
+                    <p>Build a high-performing team with comprehensive training programs tailored to your operation.</p>
+                    <ul class="service-features">
+                        <li>Service excellence training</li>
+                        <li>Leadership development</li>
+                        <li>Standard operating procedures</li>
+                        <li>Cross-training programs</li>
+                        <li>Retention strategies</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Menu Engineering & Design</h3>
+                    <p>Data-driven menu optimization that balances customer appeal with profitability.</p>
+                    <ul class="service-features">
+                        <li>Menu profitability analysis</li>
+                        <li>Pricing strategy optimization</li>
+                        <li>Recipe standardization</li>
+                        <li>Seasonal menu development</li>
+                        <li>Food cost engineering</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Full Property Assessments</h3>
+                    <p>Comprehensive evaluation of your entire hospitality operation with actionable improvement plans.</p>
+                    <ul class="service-features">
+                        <li>Operational audits</li>
+                        <li>Financial analysis</li>
+                        <li>Competitive benchmarking</li>
+                        <li>Growth opportunity identification</li>
+                        <li>Implementation roadmaps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section - High Intent Buyer Questions -->
+    <section class="content-section" id="expertise">
+        <div class="container">
+            <h2 class="section-title">Expert Insights for Hospitality Leaders</h2>
+            <p class="section-subtitle">Answers to the questions every hospitality manager needs to know</p>
+
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>Why Your Restaurant Needs a Kitchen Management System (KMS)</h3>
+                    <p>A Kitchen Management System is the backbone of efficient restaurant operations. Here's why it's essential for modern hospitality businesses:</p>
+
+                    <h4>What is KMS?</h4>
+                    <p>A Kitchen Management System (KMS) is comprehensive software that manages all aspects of food production, from inventory and purchasing to recipe costing and preparation workflows. It's the command center for your kitchen operations.</p>
+
+                    <h4>Critical Benefits:</h4>
+                    <ul>
+                        <li><strong>Real-time inventory tracking</strong> - Know exactly what you have, when you need to order, and prevent stockouts</li>
+                        <li><strong>Accurate recipe costing</strong> - Understand true food costs down to the penny and price menus profitably</li>
+                        <li><strong>Waste reduction</strong> - Identify waste patterns and reduce food costs by 15-25%</li>
+                        <li><strong>Labor optimization</strong> - Streamline prep workflows and reduce kitchen labor by 10-20%</li>
+                        <li><strong>Vendor management</strong> - Compare prices, track orders, and negotiate better deals</li>
+                        <li><strong>Compliance tracking</strong> - Automated HACCP logs and food safety documentation</li>
+                    </ul>
+
+                    <h4>ROI Timeline:</h4>
+                    <p>Most restaurants see complete ROI within 6-12 months through reduced food costs, labor savings, and eliminated waste. Average annual savings: $50,000-$200,000 depending on operation size.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>How to Reduce Restaurant Food Costs by 15-30%</h3>
+                    <p>Food costs are typically 28-35% of revenue. Here's how to systematically reduce them without sacrificing quality:</p>
+
+                    <h4>1. Implement Recipe Standardization</h4>
+                    <ul>
+                        <li>Document exact portions and procedures for every dish</li>
+                        <li>Train staff on proper portioning techniques</li>
+                        <li>Use standardized recipes in your KMS for accurate costing</li>
+                        <li>Typical savings: 3-5% of food costs</li>
+                    </ul>
+
+                    <h4>2. Optimize Inventory Management</h4>
+                    <ul>
+                        <li>Implement FIFO (First In, First Out) systems</li>
+                        <li>Conduct regular inventory counts (weekly minimum)</li>
+                        <li>Set par levels based on actual usage data</li>
+                        <li>Reduce ordering frequency to minimize over-purchasing</li>
+                        <li>Typical savings: 4-7% of food costs</li>
+                    </ul>
+
+                    <h4>3. Vendor Management & Negotiations</h4>
+                    <ul>
+                        <li>Compare at least 3 vendors for major categories</li>
+                        <li>Negotiate volume discounts and payment terms</li>
+                        <li>Review contracts quarterly for better opportunities</li>
+                        <li>Consolidate orders to reduce delivery fees</li>
+                        <li>Typical savings: 2-5% of food costs</li>
+                    </ul>
+
+                    <h4>4. Menu Engineering</h4>
+                    <ul>
+                        <li>Analyze menu item profitability and popularity</li>
+                        <li>Promote high-margin items strategically</li>
+                        <li>Redesign low-margin dishes or remove them</li>
+                        <li>Adjust portion sizes based on plate waste data</li>
+                        <li>Typical savings: 4-8% of food costs</li>
+                    </ul>
+
+                    <h4>5. Waste Reduction Programs</h4>
+                    <ul>
+                        <li>Track and categorize all waste (prep, cooking, plate)</li>
+                        <li>Implement root cause analysis for waste patterns</li>
+                        <li>Train staff on waste awareness</li>
+                        <li>Repurpose ingredients creatively (stocks, specials, etc.)</li>
+                        <li>Typical savings: 2-5% of food costs</li>
+                    </ul>
+
+                    <p><strong>Combined Impact:</strong> These five strategies typically reduce total food costs by 15-30%, translating to $75,000-$300,000 in annual savings for a $1M revenue restaurant.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>The True Cost of Poor Hospitality Operations</h3>
+                    <p>Inefficient operations silently drain profits. Here's what poor management really costs:</p>
+
+                    <h4>Labor Cost Overruns</h4>
+                    <ul>
+                        <li><strong>Overstaffing during slow periods:</strong> $30,000-$100,000 annually</li>
+                        <li><strong>Inefficient scheduling:</strong> 10-15% of labor budget wasted</li>
+                        <li><strong>High turnover costs:</strong> $5,000-$7,000 per employee replacement</li>
+                        <li><strong>Overtime premium pay:</strong> $15,000-$50,000 annually</li>
+                    </ul>
+
+                    <h4>Food Waste & Spoilage</h4>
+                    <ul>
+                        <li><strong>Poor inventory control:</strong> 4-10% of food purchases wasted</li>
+                        <li><strong>Over-prepping:</strong> $500-$2,000 weekly losses</li>
+                        <li><strong>Quality issues:</strong> Comps and remakes cost 2-4% of revenue</li>
+                        <li><strong>Theft and errors:</strong> 1-3% of inventory value</li>
+                    </ul>
+
+                    <h4>Revenue Leakage</h4>
+                    <ul>
+                        <li><strong>Poor pricing strategies:</strong> Leaving 5-15% margin on table</li>
+                        <li><strong>Inconsistent portioning:</strong> $20,000-$80,000 annually</li>
+                        <li><strong>Order errors:</strong> 1-2% of revenue in comps</li>
+                        <li><strong>Slow table turns:</strong> 10-20% less capacity utilization</li>
+                    </ul>
+
+                    <h4>The Bottom Line:</h4>
+                    <p>For a $2M annual revenue restaurant, poor operations typically cost $200,000-$500,000 per year in lost profits. That's the difference between a struggling business and a thriving one.</p>
+
+                    <p><strong>Our consulting engagements typically recover 40-70% of these losses within the first year.</strong></p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about hospitality consulting</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>How much does hospitality consulting cost?</h3>
+                    <p>Investment varies based on scope and property size. Most engagements range from $5,000-$25,000 for focused projects (KMS implementation, menu engineering) to $50,000+ for comprehensive operational overhauls.</p>
+                    <p><strong>ROI:</strong> Clients typically see 5:1 to 10:1 return on investment within the first year through cost savings and revenue improvements. For example, a $15,000 consulting investment often generates $75,000-$150,000 in annual benefit.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long does a typical consulting engagement last?</h3>
+                    <p>Engagement timelines depend on project scope:</p>
+                    <ul>
+                        <li><strong>Quick wins (2-4 weeks):</strong> Menu pricing optimization, initial cost analysis</li>
+                        <li><strong>Standard projects (2-3 months):</strong> KMS implementation, operational assessments, staff training programs</li>
+                        <li><strong>Comprehensive transformations (6-12 months):</strong> Full operational overhauls, culture change initiatives, multi-unit rollouts</li>
+                        <li><strong>Ongoing advisory (monthly retainers):</strong> Continuous optimization and support</li>
+                    </ul>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What results can I expect from hospitality consulting?</h3>
+                    <p>Typical measurable outcomes from our engagements:</p>
+                    <ul>
+                        <li><strong>Food cost reduction:</strong> 15-30% decrease in food costs as % of revenue</li>
+                        <li><strong>Labor optimization:</strong> 10-20% improvement in labor efficiency</li>
+                        <li><strong>Revenue increase:</strong> 5-15% growth through menu optimization and service improvements</li>
+                        <li><strong>Waste reduction:</strong> 50-75% decrease in measurable waste</li>
+                        <li><strong>Customer satisfaction:</strong> 20-40% improvement in review scores and repeat business</li>
+                        <li><strong>Staff retention:</strong> 30-50% reduction in turnover rates</li>
+                    </ul>
+                    <p>Results are documented with before/after metrics and tracked monthly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you work with independent restaurants or just large chains?</h3>
+                    <p>We work with hospitality operations of all sizes:</p>
+                    <ul>
+                        <li><strong>Independent restaurants:</strong> Single locations with $500K+ annual revenue</li>
+                        <li><strong>Multi-unit operators:</strong> 2-50 location restaurant groups</li>
+                        <li><strong>Hotels & resorts:</strong> F&B operations, banquets, room service</li>
+                        <li><strong>Contract foodservice:</strong> Corporate dining, healthcare, education</li>
+                        <li><strong>Catering operations:</strong> On/off-premise catering businesses</li>
+                    </ul>
+                    <p>Our approach scales to your size and budget while delivering proportional ROI.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's your process for starting a consulting project?</h3>
+                    <p><strong>Our proven 5-step methodology:</strong></p>
+                    <ul>
+                        <li><strong>Step 1 - Discovery Call (Free):</strong> Understand your challenges, goals, and current situation (30-45 minutes)</li>
+                        <li><strong>Step 2 - Initial Assessment:</strong> On-site evaluation of operations, financials, and systems (1-2 days)</li>
+                        <li><strong>Step 3 - Proposal & Roadmap:</strong> Detailed recommendations with timeline, investment, and expected ROI</li>
+                        <li><strong>Step 4 - Implementation:</strong> Hands-on execution with your team, including training and process changes</li>
+                        <li><strong>Step 5 - Measurement & Optimization:</strong> Track results, refine systems, ensure sustainability</li>
+                    </ul>
+                    <p>We maintain open communication throughout and adjust based on real-time results.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Which KMS platform do you recommend?</h3>
+                    <p>KMS selection depends on your specific needs, size, and existing systems. Popular platforms we work with include:</p>
+                    <ul>
+                        <li><strong>MarketMan:</strong> Great for independent restaurants and small chains (2-20 locations)</li>
+                        <li><strong>BlueCart:</strong> Excellent for purchasing and vendor management focus</li>
+                        <li><strong>Toast:</strong> Best for integrated POS + inventory management</li>
+                        <li><strong>Craftable:</strong> Ideal for craft beverage operations and bars</li>
+                        <li><strong>Restaurant365:</strong> Enterprise-level for larger multi-unit operations</li>
+                        <li><strong>Custom solutions:</strong> For unique operational requirements</li>
+                    </ul>
+                    <p>We're platform-agnostic and recommend based on your workflow, not vendor relationships. Our focus is finding the right tool that you'll actually use.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do you ensure changes stick after the engagement ends?</h3>
+                    <p>Sustainability is built into every engagement:</p>
+                    <ul>
+                        <li><strong>Documentation:</strong> Complete SOPs, training materials, and reference guides</li>
+                        <li><strong>Staff training:</strong> Hands-on training for all levels, not just management</li>
+                        <li><strong>Champion development:</strong> Identify and empower internal champions for each initiative</li>
+                        <li><strong>Measurement systems:</strong> Simple dashboards and KPIs your team can monitor independently</li>
+                        <li><strong>Follow-up support:</strong> 30-90 day post-engagement check-ins included</li>
+                        <li><strong>Optional retainers:</strong> Ongoing monthly advisory for continued optimization</li>
+                    </ul>
+                    <p>Our goal is to make you independent, not dependent. We teach you to fish, not just give you fish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="roi-section" id="results">
+        <div class="container">
+            <h2 class="section-title">Real Results from Recent Engagements</h2>
+            <p class="section-subtitle">Measurable impact across different hospitality operations</p>
+
+            <div class="roi-grid">
+                <div class="roi-card">
+                    <div class="number">$180K</div>
+                    <div class="label">Annual Savings - Mid-size Restaurant Group (4 locations)</div>
+                </div>
+                <div class="roi-card">
+                    <div class="number">23%</div>
+                    <div class="label">Food Cost Reduction - Fine Dining Restaurant</div>
+                </div>
+                <div class="roi-card">
+                    <div class="number">$95K</div>
+                    <div class="label">First Year Profit Increase - Hotel F&B Operation</div>
+                </div>
+                <div class="roi-card">
+                    <div class="number">18%</div>
+                    <div class="label">Labor Cost Improvement - Casual Dining Chain</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Content Showcase -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Latest Insights & Resources</h2>
+            <p class="section-subtitle">Expert knowledge to help you run a better hospitality business</p>
+
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>The 2024 Guide to Restaurant Labor Cost Management</h3>
+                    <p>Labor costs are soaring across the industry. Learn the exact strategies successful operators use to control costs without sacrificing service quality.</p>
+                    <h4>Key Topics:</h4>
+                    <ul>
+                        <li>How to calculate true labor cost percentage</li>
+                        <li>Optimal labor targets by restaurant segment</li>
+                        <li>Scheduling strategies that reduce overtime by 40%</li>
+                        <li>Technology tools that actually save labor hours</li>
+                        <li>Training investments that reduce turnover by 50%</li>
+                    </ul>
+                </article>
+
+                <article class="content-card">
+                    <h3>Menu Engineering 101: Maximize Profitability Per Guest</h3>
+                    <p>Your menu is your most powerful profit tool. Discover how to engineer it for maximum profitability while maintaining guest satisfaction.</p>
+                    <h4>What You'll Learn:</h4>
+                    <ul>
+                        <li>The menu matrix: Stars, Plowhorses, Puzzles, and Dogs</li>
+                        <li>How to price menu items for optimal profit margins</li>
+                        <li>Visual design techniques that increase high-margin sales</li>
+                        <li>Portion control strategies that protect profits</li>
+                        <li>When to redesign, refresh, or completely overhaul your menu</li>
+                    </ul>
+                </article>
+
+                <article class="content-card">
+                    <h3>Hospitality Technology Stack: What You Actually Need in 2024</h3>
+                    <p>Cut through the noise and understand which technology investments deliver real ROI for your operation.</p>
+                    <h4>Essential Systems:</h4>
+                    <ul>
+                        <li>POS systems: Features that matter vs. expensive gimmicks</li>
+                        <li>Kitchen Management Systems: When you're ready and what to buy</li>
+                        <li>Reservation and table management platforms</li>
+                        <li>Staff scheduling and communication tools</li>
+                        <li>Customer data and loyalty programs</li>
+                        <li>Integration strategies that prevent tech chaos</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Hospitality Operation?</h2>
+            <p>Schedule a free 30-minute consultation to discuss your challenges and explore how we can help you achieve your goals.</p>
+
+            <!-- REPLACE THIS SECTION WITH GOHIGHLEVEL FORM BUILDER -->
+            <div style="max-width: 600px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 1rem;">
+                <form id="contactForm" style="text-align: left;">
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Name *</label>
+                        <input type="text" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; font-size: 1rem;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Email *</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; font-size: 1rem;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Phone</label>
+                        <input type="tel" name="phone" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; font-size: 1rem;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Business Type *</label>
+                        <select name="business_type" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; font-size: 1rem;">
+                            <option value="">Select...</option>
+                            <option value="independent_restaurant">Independent Restaurant</option>
+                            <option value="restaurant_group">Restaurant Group (2+ locations)</option>
+                            <option value="hotel_resort">Hotel/Resort F&B</option>
+                            <option value="catering">Catering Operation</option>
+                            <option value="other">Other Hospitality</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">What challenges are you facing?</label>
+                        <textarea name="message" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; font-size: 1rem;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--primary); color: white; cursor: pointer; border: none;">Schedule Free Consultation</button>
+                </form>
+            </div>
+            <!-- END FORM REPLACEMENT AREA -->
+
+            <p style="margin-top: 2rem; font-size: 0.875rem; opacity: 0.9;">
+                Or call/text: <strong>(555) 123-4567</strong> | Email: <strong>jason@jliittrell.com</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#faq">FAQ</a>
+                <a href="#results">Results</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2024 Jason Littrell Hospitality Consulting. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; opacity: 0.7;">
+                Serving restaurants, hotels, and F&B operations nationwide
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+                }
+            });
+        });
+
+        // Form handling - REPLACE WITH GOHIGHLEVEL INTEGRATION
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Replace this alert with GoHighLevel webhook submission
+                alert('Form submitted! Please integrate with GoHighLevel webhook.');
+                // Example webhook integration:
+                // fetch('YOUR_GHL_WEBHOOK_URL', {
+                //     method: 'POST',
+                //     headers: {'Content-Type': 'application/json'},
+                //     body: JSON.stringify(Object.fromEntries(new FormData(form)))
+                // }).then(response => {
+                //     if (response.ok) {
+                //         alert('Thank you! We\'ll contact you within 24 hours.');
+                //         form.reset();
+                //     }
+                // });
+            });
+        }
+
+        // Fade in animations on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {threshold: 0.1});
+
+        document.querySelectorAll('.service-card, .content-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
