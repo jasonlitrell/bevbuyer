@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Littrell | Restaurant & Hospitality Operations Consultant</title>
+    <meta name="description" content="Reduce costs by 20-30% and boost profitability. Expert hospitality consultant specializing in KMS systems, restaurant operations, and F&B management.">
+    <meta name="keywords" content="hospitality consultant, restaurant consultant, KMS implementation, reduce food costs, restaurant operations, F&B consultant, menu engineering">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        :root {
+            --primary: #1e40af;
+            --accent: #f59e0b;
+            --success: #059669;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-alt: #f9fafb;
+        }
+        body {font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6;}
+        .container {max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
+
+        /* GHL Placeholder Boxes */
+        .ghl-placeholder {
+            border: 4px dashed #f59e0b;
+            background: #fffbeb;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        .ghl-placeholder h3 {
+            color: #d97706;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .ghl-placeholder p {
+            color: #92400e;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        .ghl-placeholder code {
+            background: #fef3c7;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            color: #78350f;
+        }
+
+        /* Header */
+        header {position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;}
+        nav {display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;
+            max-width: 1200px; margin: 0 auto;}
+        .logo {font-size: 1.5rem; font-weight: 900; color: var(--primary);}
+        .nav-links {display: flex; gap: 2rem; list-style: none; align-items: center;}
+        .nav-links a {color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.3s;}
+        .nav-links a:hover {color: var(--primary);}
+        .nav-cta {background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+            text-decoration: none; font-weight: 600;}
+
+        /* Hero */
+        .hero {padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white; text-align: center;}
+        .hero h1 {font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.1;}
+        .hero .highlight {color: var(--accent);}
+        .hero p {font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;}
+        .hero-cta {display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;}
+        .btn {padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none;
+            display: inline-block; transition: all 0.3s; cursor: pointer; border: none; font-size: 1.125rem;}
+        .btn-primary {background: var(--accent); color: #1f2937;}
+        .btn-primary:hover {background: #d97706; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2);}
+        .btn-secondary {background: white; color: var(--primary); border: 2px solid white;}
+        .btn-secondary:hover {background: transparent; color: white;}
+
+        /* Trust Bar */
+        .trust-bar {background: var(--bg-alt); padding: 3rem 2rem; text-align: center;}
+        .trust-stats {display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-top: 2rem;}
+        .trust-stat .number {font-size: 3rem; font-weight: 900; color: var(--primary); line-height: 1;}
+        .trust-stat .label {color: var(--text-light); font-size: 0.875rem; margin-top: 0.5rem; font-weight: 600;}
+
+        /* Sections */
+        section {padding: 5rem 2rem;}
+        .section-title {font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-align: center; margin-bottom: 1rem;}
+        .section-subtitle {font-size: 1.25rem; color: var(--text-light); text-align: center;
+            max-width: 700px; margin: 0 auto 3rem;}
+
+        /* Services Grid */
+        .services-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem; max-width: 1200px; margin: 0 auto;}
+        .service-card {background: white; padding: 2rem; border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s; border-top: 4px solid var(--primary);}
+        .service-card:hover {transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
+        .service-icon {font-size: 3rem; margin-bottom: 1rem;}
+        .service-card h3 {font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);}
+        .service-card p {color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;}
+        .service-card ul {padding-left: 1.25rem;}
+        .service-card li {color: var(--text-light); margin-bottom: 0.5rem;}
+
+        /* Content Cards */
+        .content-section {background: var(--bg-alt);}
+        .content-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem; max-width: 1200px; margin: 0 auto;}
+        .content-card {background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.08);}
+        .content-card h3 {font-size: 1.75rem; margin-bottom: 1rem; color: var(--primary); line-height: 1.3;}
+        .content-card h4 {font-size: 1.25rem; margin: 1.5rem 0 0.75rem; color: var(--text); font-weight: 700;}
+        .content-card p {color: var(--text-light); margin-bottom: 1rem; line-height: 1.8;}
+        .content-card ul {padding-left: 1.5rem; margin: 1rem 0;}
+        .content-card li {color: var(--text-light); margin-bottom: 0.75rem; line-height: 1.6;}
+        .content-card strong {color: var(--text); font-weight: 700;}
+
+        /* CTA Section */
+        .cta-section {background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%);
+            padding: 5rem 2rem; text-align: center;}
+        .cta-section h2 {font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: var(--text);}
+        .cta-section p {font-size: 1.25rem; margin-bottom: 2rem; color: var(--text); opacity: 0.9;}
+
+        /* Footer */
+        footer {background: #111827; color: white; padding: 3rem 2rem; text-align: center;}
+        .footer-links {display: flex; gap: 2rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap;}
+        .footer-links a {color: white; text-decoration: none; opacity: 0.8;}
+        .footer-links a:hover {opacity: 1;}
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {display: none;}
+            section {padding: 3rem 1rem;}
+            .hero {padding: 5rem 1rem 3rem;}
+            .trust-stats {flex-direction: column; gap: 2rem;}
+            .services-grid, .content-grid {grid-template-columns: 1fr;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         HEADER & NAVIGATION
+         ======================================== -->
+    <header>
+        <nav>
+            <div class="logo">Jason Littrell</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact" class="nav-cta">Book Free Consultation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="hero">
+        <h1>Cut Restaurant Costs by 20-30%<br><span class="highlight">Without Sacrificing Quality</span></h1>
+        <p>Expert hospitality consulting that delivers real results. KMS implementation, operations optimization, and proven strategies that boost your bottom line.</p>
+
+        <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Get Free Cost Analysis</a>
+            <a href="#services" class="btn btn-secondary">See How It Works</a>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TRUST BAR
+         ======================================== -->
+    <section class="trust-bar">
+        <div class="container">
+            <h3 style="color: var(--text-light); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Proven Results Across 50+ Hospitality Operations</h3>
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="number">$2.1M+</div>
+                    <div class="label">Cost Savings Generated</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="number">23%</div>
+                    <div class="label">Average Cost Reduction</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="number">6-12mo</div>
+                    <div class="label">Typical ROI Timeline</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="number">100%</div>
+                    <div class="label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SERVICES SECTION
+         ======================================== -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services That Drive Real Profitability</h2>
+            <p class="section-subtitle">Specialized hospitality consulting focused on measurable results</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>KMS Implementation</h3>
+                    <p>Expert kitchen management system setup that actually gets used by your team.</p>
+                    <ul>
+                        <li>Platform selection & implementation</li>
+                        <li>Recipe costing & menu engineering</li>
+                        <li>Inventory control systems</li>
+                        <li>Staff training & adoption</li>
+                        <li>ROI: $50K-$200K annual savings</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Operations Optimization</h3>
+                    <p>Streamline workflows, reduce waste, and maximize efficiency across your operation.</p>
+                    <ul>
+                        <li>Labor cost reduction (10-20%)</li>
+                        <li>Process workflow redesign</li>
+                        <li>Service standards development</li>
+                        <li>Performance tracking systems</li>
+                        <li>Quality control implementation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Cost Reduction Strategy</h3>
+                    <p>Systematic approach to cutting costs while maintaining or improving quality.</p>
+                    <ul>
+                        <li>Food cost reduction (15-30%)</li>
+                        <li>Vendor negotiation & sourcing</li>
+                        <li>Waste elimination programs</li>
+                        <li>Portion control systems</li>
+                        <li>Menu profitability analysis</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Menu Engineering</h3>
+                    <p>Data-driven menu optimization that increases profitability per guest.</p>
+                    <ul>
+                        <li>Menu item profitability analysis</li>
+                        <li>Pricing strategy optimization</li>
+                        <li>Recipe standardization</li>
+                        <li>Seasonal menu development</li>
+                        <li>Visual design for higher margins</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Staff Training Programs</h3>
+                    <p>Build a high-performing team that executes consistently and stays longer.</p>
+                    <ul>
+                        <li>Service excellence training</li>
+                        <li>Leadership development</li>
+                        <li>SOP documentation & training</li>
+                        <li>Retention programs (reduce turnover 30-50%)</li>
+                        <li>Cross-training initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Full Property Assessments</h3>
+                    <p>Comprehensive operational audit with detailed improvement roadmap.</p>
+                    <ul>
+                        <li>Complete operations analysis</li>
+                        <li>Financial performance review</li>
+                        <li>Competitive benchmarking</li>
+                        <li>Growth opportunity identification</li>
+                        <li>90-day implementation plan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔶 GOHIGHLEVEL CALENDAR BOOKING 🔶
+         REPLACE THIS ENTIRE DIV SECTION
+         ======================================== -->
+    <section style="background: var(--bg-alt); padding: 4rem 2rem;">
+        <div class="container">
+            <div class="ghl-placeholder">
+                <h3>📅 REPLACE WITH GOHIGHLEVEL CALENDAR</h3>
+                <p><strong>What to do:</strong> Delete this entire placeholder div</p>
+                <p><strong>Add:</strong> GoHighLevel Calendar Widget</p>
+                <p><strong>Purpose:</strong> Let visitors book a free 30-minute consultation call</p>
+                <p><strong>Settings:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>Calendar Name: "Free Restaurant Cost Analysis Call"</li>
+                    <li>Duration: 30 minutes</li>
+                    <li>Buffer: 15 minutes between calls</li>
+                    <li>Confirmation: Send email + SMS reminder</li>
+                    <li>Questions to ask: Business name, Annual revenue, Biggest challenge</li>
+                </ul>
+                <code>Element Type: Calendar Widget</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTENT SECTION - SEO RICH ARTICLES
+         ======================================== -->
+    <section class="content-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Restaurant Cost Reduction Strategies</h2>
+            <p class="section-subtitle">Expert insights that help you run a more profitable operation</p>
+
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>How to Reduce Restaurant Food Costs by 15-30%</h3>
+                    <p>Food costs eat up 28-35% of revenue. Here's exactly how to cut them without sacrificing quality:</p>
+
+                    <h4>1. Recipe Standardization (3-5% savings)</h4>
+                    <p>Document exact portions for every dish. Train staff on portioning. Use your KMS to track recipe costs daily.</p>
+
+                    <h4>2. Inventory Management (4-7% savings)</h4>
+                    <p>Weekly counts minimum. FIFO systems. Par levels based on actual usage. Reduce ordering frequency to prevent over-purchasing.</p>
+
+                    <h4>3. Vendor Negotiations (2-5% savings)</h4>
+                    <p>Compare 3+ vendors per category. Negotiate volume discounts. Review contracts quarterly. Consolidate orders to reduce delivery fees.</p>
+
+                    <h4>4. Menu Engineering (4-8% savings)</h4>
+                    <p>Analyze item profitability vs. popularity. Promote high-margin items. Adjust portions based on plate waste. Strategic pricing.</p>
+
+                    <h4>5. Waste Reduction (2-5% savings)</h4>
+                    <p>Track all waste by category. Root cause analysis. Staff training on waste awareness. Repurpose ingredients creatively.</p>
+
+                    <p><strong>Total Impact:</strong> 15-30% food cost reduction = $75K-$300K annual savings for $1M revenue restaurant.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Why Your Restaurant Needs a Kitchen Management System</h3>
+                    <p>A KMS is the fastest way to gain control of your food costs and inventory. Here's why:</p>
+
+                    <h4>What is KMS?</h4>
+                    <p>Kitchen Management Software manages inventory, purchasing, recipe costing, and prep workflows from one dashboard. Think of it as your kitchen's operating system.</p>
+
+                    <h4>Critical Benefits:</h4>
+                    <ul>
+                        <li><strong>Real-time inventory:</strong> Know what you have, prevent stockouts, stop over-ordering</li>
+                        <li><strong>Accurate recipe costing:</strong> Know true costs down to the penny, price menus profitably</li>
+                        <li><strong>Waste tracking:</strong> Identify waste patterns, reduce food costs 15-25%</li>
+                        <li><strong>Labor efficiency:</strong> Streamline prep, reduce kitchen labor 10-20%</li>
+                        <li><strong>Vendor management:</strong> Compare prices automatically, negotiate better deals</li>
+                        <li><strong>Compliance:</strong> Automated HACCP logs and food safety documentation</li>
+                    </ul>
+
+                    <h4>ROI Timeline:</h4>
+                    <p>Most restaurants achieve full ROI in 6-12 months. Average annual savings: <strong>$50,000-$200,000</strong> depending on size.</p>
+
+                    <h4>Popular KMS Platforms:</h4>
+                    <ul>
+                        <li><strong>MarketMan:</strong> Best for independent restaurants (2-20 locations)</li>
+                        <li><strong>Toast:</strong> Great if you're already using Toast POS</li>
+                        <li><strong>Restaurant365:</strong> Enterprise solution for larger chains</li>
+                        <li><strong>BlueCart:</strong> Excellent for vendor management focus</li>
+                    </ul>
+                </article>
+
+                <article class="content-card">
+                    <h3>The True Cost of Poor Restaurant Operations</h3>
+                    <p>Inefficient operations silently drain $200K-$500K annually from a $2M restaurant. Here's where the money goes:</p>
+
+                    <h4>Labor Cost Overruns ($80K-$150K lost)</h4>
+                    <ul>
+                        <li>Overstaffing during slow periods: $30K-$100K</li>
+                        <li>Inefficient scheduling wastes: 10-15% of labor budget</li>
+                        <li>High turnover replacement costs: $5K-$7K per employee</li>
+                        <li>Overtime premium pay: $15K-$50K annually</li>
+                    </ul>
+
+                    <h4>Food Waste & Spoilage ($60K-$180K lost)</h4>
+                    <ul>
+                        <li>Poor inventory control: 4-10% of purchases wasted</li>
+                        <li>Over-prepping: $500-$2,000 weekly losses</li>
+                        <li>Quality issues requiring comps: 2-4% of revenue</li>
+                        <li>Theft and errors: 1-3% of inventory</li>
+                    </ul>
+
+                    <h4>Revenue Leakage ($60K-$170K lost)</h4>
+                    <ul>
+                        <li>Poor pricing strategies: Leaving 5-15% margin on table</li>
+                        <li>Inconsistent portioning: $20K-$80K annually</li>
+                        <li>Order errors and comps: 1-2% of revenue</li>
+                        <li>Slow table turns: 10-20% capacity under-utilized</li>
+                    </ul>
+
+                    <p><strong>Good news:</strong> Our consulting typically recovers 40-70% of these losses within 12 months.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔶 GOHIGHLEVEL SURVEY 🔶
+         OPTIONAL: ADD SURVEY HERE
+         ======================================== -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div class="container">
+            <div class="ghl-placeholder">
+                <h3>📋 OPTIONAL: ADD GOHIGHLEVEL SURVEY</h3>
+                <p><strong>What to do:</strong> Delete this div OR replace with GHL Survey</p>
+                <p><strong>Purpose:</strong> Qualify leads before they book a call</p>
+                <p><strong>Survey Questions:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>What type of operation? (Independent, Multi-unit, Hotel F&B, Catering)</li>
+                    <li>Annual revenue range? (<$500K, $500K-$1M, $1M-$3M, $3M+)</li>
+                    <li>Biggest challenge? (High food costs, Labor issues, Low profits, Poor systems)</li>
+                    <li>Current food cost %?</li>
+                    <li>Using a KMS? (Yes/No/What's that?)</li>
+                </ul>
+                <code>Element Type: Survey Widget</code>
+                <p style="margin-top: 1rem;"><em>OR delete this section if not using surveys</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         RESULTS / ROI SECTION
+         ======================================== -->
+    <section id="results" style="background: var(--primary); color: white; padding: 5rem 2rem; text-align: center;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Real Results from Recent Clients</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Measurable impact across different restaurant types</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 1rem; backdrop-filter: blur(10px);">
+                    <div style="font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem;">$180K</div>
+                    <div style="font-size: 1.125rem;">Annual Savings<br><span style="font-size: 0.875rem; opacity: 0.8;">4-location restaurant group</span></div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 1rem; backdrop-filter: blur(10px);">
+                    <div style="font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem;">23%</div>
+                    <div style="font-size: 1.125rem;">Food Cost Reduction<br><span style="font-size: 0.875rem; opacity: 0.8;">Fine dining restaurant</span></div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 1rem; backdrop-filter: blur(10px);">
+                    <div style="font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem;">$95K</div>
+                    <div style="font-size: 1.125rem;">Profit Increase (Year 1)<br><span style="font-size: 0.875rem; opacity: 0.8;">Hotel F&B operation</span></div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 1rem; backdrop-filter: blur(10px);">
+                    <div style="font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem;">18%</div>
+                    <div style="font-size: 1.125rem;">Labor Cost Improvement<br><span style="font-size: 0.875rem; opacity: 0.8;">Casual dining chain</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         🔶 GOHIGHLEVEL CONTACT FORM 🔶
+         REPLACE THIS ENTIRE DIV SECTION
+         ======================================== -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Get Your Free Restaurant Cost Analysis</h2>
+            <p>Schedule a 30-minute call to discuss your operation and discover where you're leaving money on the table.</p>
+
+            <div class="ghl-placeholder">
+                <h3>📝 REPLACE WITH GOHIGHLEVEL FORM</h3>
+                <p><strong>What to do:</strong> Delete this entire placeholder div</p>
+                <p><strong>Add:</strong> GoHighLevel Contact Form</p>
+                <p><strong>Form Fields:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                    <li>Name (required)</li>
+                    <li>Email (required)</li>
+                    <li>Phone (required)</li>
+                    <li>Business Name (required)</li>
+                    <li>Business Type (dropdown: Independent Restaurant, Restaurant Group, Hotel/Resort, Catering, Other)</li>
+                    <li>Biggest Challenge (textarea)</li>
+                </ul>
+                <p><strong>Form Submit Button Text:</strong> "Get My Free Analysis"</p>
+                <p><strong>Automation:</strong> Send confirmation email + add to "New Leads" pipeline</p>
+                <code>Element Type: Form Widget</code>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1rem;">
+                Or call/text: <strong style="font-size: 1.25rem;">(555) 123-4567</strong><br>
+                Email: <strong>jason@jliittrell.com</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#results">Results</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2024 Jason Littrell Hospitality Consulting. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; opacity: 0.7;">
+                Serving restaurants, hotels, and F&B operations nationwide
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
